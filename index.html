@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <title>موقع تعريفي</title>
+</head>
+<body>
+    
+   <div  class="text-center mt-5">
+     <div class="chat-container">
+        <div class="chat-header">
+            <h2>Contact Name</h2>
+        </div>
+        <div class="chat-messages">
+            <!-- Messages will go here -->
+        </div>
+        <div class="chat-input">
+    <input type="text" id="messageInput" placeholder="Type a message">
+    <button onclick="sendMessage()">Send</button>
+</div>
+    </div>
+   </div>
+
+
+
+<style>
+    .chat-input input {
+    flex-grow: 1;
+    padding: 8px;
+    margin-right: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none; /* إزالة التحديد الأزرق عند التركيز */
+}
+
+.chat-input button {
+    background-color: #128C7E;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background-color: #0D7164;
+}
+</style>
+
+
+<script>
+    function sendMessage() {
+        var messageInput = document.getElementById('messageInput');
+        var message = messageInput.value.trim();
+
+        if (message !== '') {
+            var phoneNumber = '201021700756'; // قم بتعيين رقم الهاتف هنا
+            var whatsappLink = 'https://wa.me/' + phoneNumber + '?text=' + encodeURIComponent(message);
+            
+            window.open(whatsappLink, '_blank');
+            messageInput.value = ''; // إفراغ حقل الإدخال بعد إرسال الرسالة
+        }
+    }
+</script>
+</body>
+
+</html>
